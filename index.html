@@ -4,11 +4,14 @@
 
 <head>
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<!--
 <script src="//gotire.tireforce.com/js/remoteHandler.js" ></script>
 
 
-<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>-->
+
 <script>
+
 $(document).ready(function(){
     
         $.ajax({url: "http://app.tirecrm.com/globalapi/org/format/json", success: function(result){
@@ -35,7 +38,7 @@ $(document).ready(function(){
 
 function SubmitForm() {
  	
-			alert("Submit Form");
+			alert('Submit Form');
 			
 				var data = "{" ;
 				var coma = '';
@@ -76,6 +79,7 @@ function SubmitForm() {
 function errorHandler(e){
    console.log(  e);
 }
+
 function completeHandler(e){
 	console.log(e);	
 	if(e.status == true)
