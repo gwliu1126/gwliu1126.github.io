@@ -1,17 +1,8 @@
-<!-- // Jquery If needed -->
-
-<HTML>
-
+<!DOCTYPE html>
+<html>
 <head>
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-<!--
-<script src="//gotire.tireforce.com/js/remoteHandler.js" ></script>
-
-
-<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>-->
-
 <script>
-
 $(document).ready(function(){
     
         $.ajax({url: "http://app.tirecrm.com/globalapi/org/format/json", success: function(result){
@@ -38,8 +29,7 @@ $(document).ready(function(){
 
 function SubmitForm() {
  	
-			alert('Submit Form');
-			
+ 
 				var data = "{" ;
 				var coma = '';
 					$('#webtolead input,#webtolead textarea,#webtolead select').each(function(){
@@ -79,7 +69,6 @@ function SubmitForm() {
 function errorHandler(e){
    console.log(  e);
 }
-
 function completeHandler(e){
 	console.log(e);	
 	if(e.status == true)
@@ -107,22 +96,6 @@ function completeHandler(e){
 }
 </style>
 </head>
-
-
-
-
-<BODY>
-<!--
-Gary's Test
-
-<iframe src="http://www.w3schools.com"></iframe>
-
-<iframe id="SearchPage" width="100%" height="800px" 
-	 style="border:0px;height:800px;" border="0" 
-	 src="//www.tireforce.com/walmart-macleod-supercentre">
-</iframe>
--->
-
 <body>
 <div id="page1" style="display:none;" >
   <form action="post" id="webtolead" onSubmit="return false;" />
@@ -156,6 +129,5 @@ Gary's Test
   </form>
 </div>
  
-
-</BODY>
-</HTML>
+</body>
+</html>
