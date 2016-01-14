@@ -1,133 +1,14 @@
 <!DOCTYPE html>
 <html>
-<head>
-<script src="jquery-1.11.3.min.js"></script>
-<script>
-$(document).ready(function(){
-    
-        $.ajax({url: "http://app.tirecrm.com/globalapi/org/format/json", success: function(result){
-          
-		   if(result['status'] == true)
-		   {
-			   	for (i = 0; i < result['result'].length; i++) { 
-		   		 	 $('#org').append($('<option>', { 
-						value: result['result'][i]['id'],
-						text : result['result'][i]['name'] 
-					}));
-				 
-				}
-				$('#page1').show();
-		   }
-		   
-        }});
-		
-		
+	<body>
+	This is Gary's home page
+	</body>
 
-		
-    
-});
-
-function SubmitForm() {
- 	
- 
-				var data = "{" ;
-				var coma = '';
-					$('#webtolead input,#webtolead textarea,#webtolead select').each(function(){
-							if(this.value == '')
-							{	
-								alert('please fill all fields');
-								return false;
-							}
-					data += coma + JSON.stringify(this.name ) + ':' + JSON.stringify(this.value );
-					coma = ',';
-				  });
-				data +=  "}";
- 
 	
-		
-			$.ajax({
-				url: 'http://app.tirecrm.com/globalapi/client/format/json',   
-				type: 'POST',
-				xhr: function() {  // custom xhr
-					myXhr = $.ajaxSettings.xhr();
-					
-					return myXhr;
-				},
-				success: completeHandler,
-				error: errorHandler,
-				// Form data
-				dataType: "json",
-				data: data,
-				//Options to tell JQuery not to process data or worry about content-type
-				cache: false,
-				contentType:false,
-				processData: false
-			});
-			
-		
-	}
-function errorHandler(e){
-   console.log(  e);
-}
-function completeHandler(e){
-	console.log(e);	
-	if(e.status == true)
-	{
-		alert('new record created with id ' + e.id);
-		$('input,select,textarea').val('');
-	}else
-	{
-		alert(e.error);
-	}
-}
-</script>
-<style>
-.row {
-	padding: 10px;
-}
-.row label {
-	width: 134px;
-	float: left;
-	text-align: right;
-	margin-right: 10px;
-}
-.row input, .row select, .row textarea {
-	width: 134px;
-}
-</style>
-</head>
-<body>
-<div id="page1" style="display:none;" >
-  <form action="post" id="webtolead" onSubmit="return false;" />
-  
-  <div class="row" >
-    <label>Select Org</label>
-    <select id="org"  name="orgid">
-    </select>
-  </div>
-  <div class="row" >
-    <label>Name</label>
-    <input type="text" maxlength="50" value="" name="name" id="name" />
-  </div>
-  <div class="row" >
-    <label>SurName</label>
-    <input type="text" maxlength="50" value="" name="lastname" id="lastname" />
-  </div>
-  <div class="row" >
-    <label>Email</label>
-    <input value="" type="email" name="email" id="email" />
-  </div>
-  <div class="row" >
-    <label>Phone</label>
-    <input value="" type="phone" name="phone" id="phone" />
-  </div>
-  <div class="row" >
-    <label>Notes</label>
-    <textarea value=""   name="notes" id="notes" ></textarea>
-  </div>
-  <button id="submitform" onClick="SubmitForm();return false;"   >Submit</button>
-  </form>
-</div>
- 
-</body>
+	<iframe id="SearchPage" width="100%" height="800px"
+    	style="border:0px;height:800px;" border="0"
+    	src="//ec2-52-34-119-107.us-west-2.compute.amazonaws.com:3000/signup">
+    </iframe>
+
+
 </html>
